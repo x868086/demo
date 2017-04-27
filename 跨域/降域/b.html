@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>b.html</title>
+	<style type="text/css">
+		#container{
+			margin-left:100px;
+			margin-right:100px;
+			border:1px solid #ccc;
+		}
+
+		#header{
+			height:60px;
+			background-color:blue;
+		}
+
+		#main{
+			height:300px;
+			background-color:pink;
+		}
+
+		img{
+			width:300px;
+		}
+
+		#footer{
+			height:20px;
+			background-color:#888;
+		}
+
+
+	</style>
+	<script type="text/javascript">
+		document.domain="a.com"   /*降域方法，修改域信息*/
+	</script>
+</head>
+<body>
+<div id="container">
+	<div id="header">
+	header
+	</div>
+	<div id="main">
+	<p>B域上b.html内的信息</p>
+	<span>{"机型":"大型运输机-安225","国家":"乌克兰"}</span>
+	<img src="001.jpg">
+	</div>
+	<div id="footer">
+	footer
+	</div>
+</div>
+
+</body>
+</html>

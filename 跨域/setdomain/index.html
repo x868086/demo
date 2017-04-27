@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>a.com.html</title>
+	<style type="text/css">
+		#container{
+			margin-left:100px;
+			margin-right:100px;
+			border:1px solid #ccc;
+		}
+
+		#header{
+			height:60px;
+			background-color:green;
+		}
+
+		#footer1{
+			height:20px;
+			background-color:#888;
+		}
+
+		#main{
+			height:500px;
+		}
+
+		iframe{
+			display:none;
+		}
+
+		img{
+			width:300px;
+		}
+
+	
+	</style>
+	<script type="text/javascript">
+		document.domain="a.com"    /*降域方法，修改域信息*/
+	</script>
+</head>
+<body>
+<div id="container">
+	<div id="header">
+	header
+	</div>
+	<div id="main">
+	<iframe src="http://script.a.com:8080/b.html" height="400" width="800">
+	</iframe>
+	</div>
+	<div id="footer1">
+	footer
+	</div>
+	<script type="text/javascript">//这里一定要设置定时器延迟执行，否则获取不到iframe的内容，因为iframe加载需要时间，还没加载完document.get...就执行完了
+		setTimeout(function(){
+		var ccc=document.getElementsByTagName("iframe")
+		console.log(ccc)
+		var ddd=ccc[0].contentDocument.getElementsByTagName("span")[0].innerHTML
+		console.log(ddd)
+		var eee=JSON.parse(ddd)
+		console.log(eee)
+		alert("来自script.a.com的消息"+eee.机型+" "+eee.国家)
+		var ifr = document.createElement("p");
+		ifr.innerHTML="来自script.a.com的查询结果:"+"世界上最大的运输机:"+eee.机型+" "+"产地:"+eee.国家+'<br />'+'<img src="http://script.a.com:8080/001.jpg">'
+		document.getElementById("main").appendChild(ifr)
+		// document.body.appendChild(ifr);
+	},1000)
+	</script>
+</div>
+
+</body>
+</html>
