@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>html5</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        body{
+            background:lightblue;
+        }
+        #container{
+            width:100px;
+            height:100px;
+            border-radius:60px;
+            border:10px solid rgba(255,255,255,0.2);
+            border-bottom:10px solid #fff;
+            animation:getrun 1s linear infinite;
+        }
+
+        @keyframes getrun{
+            0% {}
+            100%{transform:rotate(360deg)}
+        }
+        </style>
+    </head>
+    <body>
+    <div id="container"></div>
+    </body>
+</html>
